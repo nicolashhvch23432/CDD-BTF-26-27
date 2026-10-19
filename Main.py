@@ -1,4 +1,3 @@
-
 from pybricks.tools import wait,StopWatch,hub_menu
 from funcoes_btf import hub,andar_reto_suave,reset,drive_base,a_motor,b_motor,andar_reto,turn,left_motor,right_motor,turn2,liberar_motores,configurar_base,configurar_pid,curva
 timer = StopWatch()
@@ -20,6 +19,14 @@ def saida_3():
     b_motor.run_target(500,-50,wait=False)
     a_motor.run_time(-800,800,wait=False)
     andar_reto(70,400)
+    left_motor.run_angle(400,50)
+    andar_reto(10, 300)
+    right_motor.run_angle(400,50)
+    
+    '''andar_reto(10)
+    turn(-17)''
+
+
     turn(10,200)
     wait(700)
     andar_reto(11,400)
@@ -39,7 +46,7 @@ def saida_3():
     curva(-10,-130)
     andar_reto(-50,400)
     turn(-99,400,liberar=True)
-    liberar_motores()
+    liberar_motores()'''
 def saida_4():
     andar_reto(2,400)
     left_motor.run_angle(1000,340)
