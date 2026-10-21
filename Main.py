@@ -1,3 +1,4 @@
+
 from pybricks.tools import wait,StopWatch,hub_menu
 from funcoes_btf import hub,andar_reto_suave,reset,drive_base,a_motor,b_motor,andar_reto,turn,left_motor,right_motor,turn2,liberar_motores,configurar_base,configurar_pid,curva
 timer = StopWatch()
@@ -11,7 +12,7 @@ def saida_1():
     andar_reto(20,400)
     andar_reto(-25,400)
 def saida_2():
-    curva(460,47)
+    curva(440,50)
     andar_reto(9,400)
     a_motor.run_target(1000,300)
     andar_reto_suave(-45,400)
@@ -19,9 +20,22 @@ def saida_3():
     b_motor.run_target(500,-50,wait=False)
     a_motor.run_time(-800,800,wait=False)
     andar_reto(70,400)
-    left_motor.run_angle(400,50)
+    left_motor.run_angle(400,48)
     andar_reto(10, 300)
-    right_motor.run_angle(400,50)
+    turn(-15, 450)
+    andar_reto_suave(-7,450)
+    b_motor.run_target(500,-10)
+    andar_reto(14, 450)
+    andar_reto(-19,400)
+    a_motor.run_time(730,730,wait=False)
+    right_motor.run_angle(137,137)
+    andar_reto(14.5,400)
+    a_motor.run_time(-800,800)
+    andar_reto(-7,400)
+    curva(-10,-130)
+    andar_reto(-50,400)
+    turn(-99,400,liberar=True)
+    liberar_motores()
     
     '''andar_reto(10)
     turn(-17)''
@@ -54,29 +68,30 @@ def saida_4():
     right_motor.run_angle(1000,300)
     turn(50,400)
     andar_reto(-67,400)
+
 def saida_5():
-    andar_reto(30,400)
-    turn(90,400)
-    andar_reto_suave(43,400)
-    turn(-90,400)
-    a_motor.run_time(-800,800,wait=False)
-    andar_reto_suave(25,400)
-    turn(90,400)
-    andar_reto_suave(9,400)
+    drive_base.use_gyro(True)
+    a_motor.run_time(180,800)
+    turn(-2,200)
+    andar_reto_suave(29,300)
+    a_motor.run_time(400,900)
     andar_reto_suave(-10,400)
-    turn(47,400)
-    andar_reto_suave(20,400)
-    turn(-42,400)
-    andar_reto_suave(7,400)
-    a_motor.run_time(800,800,wait=False)
-    turn(-15,400)
-    andar_reto_suave(20,400)
-    a_motor.run_time(-700,800)
-    turn(40,400)
-    andar_reto(60,400)
+    andar_reto(4,500)
+    a_motor.run_time(-250,900)
+    andar_reto(-400,900)
+    '''andar_reto_suave(30,450)
+    andar_reto_suave(-2,400)
+    a_motor.run_time(400,800)
+    andar_reto_suave(-10,500)'''
+
 def saida_6():
-    andar_reto(86,400)
-    turn(75,400)
+    andar_reto(84,400)
+    turn(40, 2000)
+    andar_reto(2,400)
+    turn(60,2000)
+    
+  
+
 def saida_7():
     b_motor.run_target(150,-10,wait=False)
     a_motor.run_time(-1000,250,wait=False)
