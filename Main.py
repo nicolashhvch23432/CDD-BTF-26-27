@@ -74,23 +74,24 @@ def saida_5():
     a_motor.run_time(180,800)
     turn(-2,200)
     andar_reto_suave(29,300)
-    a_motor.run_time(400,900)
+    a_motor.run_time(500,900)
     andar_reto_suave(-10,400)
     andar_reto(4,500)
-    a_motor.run_time(-250,900)
-    andar_reto(-400,900)
-    '''andar_reto_suave(30,450)
-    andar_reto_suave(-2,400)
-    a_motor.run_time(400,800)
-    andar_reto_suave(-10,500)'''
+    a_motor.run_time(-280,900)
+    andar_reto(-40,900)
+    
 
 def saida_6():
-    andar_reto(84,400)
-    turn(40, 2000)
-    andar_reto(2,400)
-    turn(60,2000)
-    
-  
+    b_motor.run_target(500,30,wait=False)
+    andar_reto(70,400)
+    turn(-90,100)
+    andar_reto_suave(30,400)
+    left_motor.run_angle(1000,480)
+    b_motor.run_target(500,-40)
+    andar_reto(6,400)
+    b_motor.run_target(900,30)
+    andar_reto(7,250)
+
 
 def saida_7():
     b_motor.run_target(150,-10,wait=False)
