@@ -37,30 +37,7 @@ def saida_3():
     turn(-99,400,liberar=True)
     liberar_motores()
     
-    '''andar_reto(10)
-    turn(-17)''
-
-
-    turn(10,200)
-    wait(700)
-    andar_reto(11,400)
-    turn(-17,200)
-    andar_reto(-5,400)
-    b_motor.run_target(500,-10)
-    andar_reto(3,400)
-    b_motor.run_target(1000,20,wait=False)
-    andar_reto(5,400)
-    b_motor.run_target(1000,-10)
-    andar_reto(-15,400)
-    a_motor.run_time(730,730,wait=False)
-    right_motor.run_angle(130,130)
-    andar_reto(16,400)
-    a_motor.run_time(-800,800)
-    andar_reto(-7,400)
-    curva(-10,-130)
-    andar_reto(-50,400)
-    turn(-99,400,liberar=True)
-    liberar_motores()'''
+    
 def saida_4():
     andar_reto(2,400)
     left_motor.run_angle(1000,340)
@@ -70,7 +47,7 @@ def saida_4():
     andar_reto(-67,400)
 
 def saida_5():
-    andar_reto(20,900)
+    andar_reto(30,900)
     
 
 def saida_6():
@@ -87,67 +64,39 @@ def saida_6():
 
 def saida_7():
     drive_base.use_gyro(True)
-    andar_reto_suave(30,450)
-    turn(-10,450)
-    andar_reto_suave(37,450)
-    left_motor.run_angle(172,172)
-    andar_reto_suave(30,450)
-    a_motor.run_time(1800,2000)
-    curva(-400,90)
-    andar_reto(-25,800)
+    b_motor.run_target(500,50,wait=False)
+    andar_reto_suave(73,450)
+    left_motor.run_angle(170,170)
+    andar_reto_suave(12,450)
+    a_motor.run_time(1000,1000)
+    andar_reto_suave(-16,400)
+    right_motor.run_angle(-165,165)
+    andar_reto_suave(-35.5,450)
+    b_motor.run_target(1000,-38)
+    right_motor.run_angle(200,182)
+    andar_reto(13, 40)
+    b_motor.run_target(2000,10)
+    andar_reto_suave(5,40)
+    andar_reto(-6.5,450)
+    left_motor.run_angle(600,-550)
+    andar_reto(-10,450)
+    turn(36,450)
+    curva(-400,-400)
+    
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+   
 
 def saida_8():
-    b_motor.run_target(50,-78,wait=False)
-    andar_reto(-0.5,400)
-    drive_base.reset()
-    drive_base.use_gyro(True)
-    wait(150)
-    andar_reto(38,400)
-    print("Angulo parcial:",hub.imu.heading())
-    curva(200,-47)
-    wait(300)
-    print("Angulo parcial:",hub.imu.heading())
-    andar_reto(35.1,400,wa=False)
-    wait(1550)
-    b_motor.run_target(100,-59)
-    andar_reto(-6,400)
-    curva(-100,43.2)
-    andar_reto(74.4,400)
-    turn2(-70,400)
-    andar_reto(5,400)
-    b_motor.run_target(300,-120)
-    wait(170)
-    b_motor.run_target(300,-112,wait=False)
-    andar_reto(-3.8,400)
-    b_motor.run_target(50,-55,wait=False)
-    a_motor.run_angle(-8000,360)
-    andar_reto(8,400)
-    andar_reto(-10,400)
-    turn(72,400)
-    andar_reto(-52.4,400)
-    turn(42,400)
-    drive_base.settings(straight_acceleration=(1000,1500),straight_speed=400)
-    drive_base.use_gyro(False)
-    drive_base.straight(-170)
-    wait(400)
-    andar_reto(9,400)
+    b_motor.run_target(450,0)
+    '''andar_reto(70,700)
+    turn(90,450)
+    andar_reto(30,450)
+    b_motor.run_target(450,60,wait=False)
+    a_motor.run_target(450,-60,wait=False)
+    turn(-90,450)'''
+
 saidas = [saida_1,saida_2,saida_3,saida_4,saida_5,saida_6,saida_7,saida_8]
 proxima_saida = 1
 print("PID reta:",drive_base.distance_control.pid())
