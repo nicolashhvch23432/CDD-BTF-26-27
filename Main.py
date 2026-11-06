@@ -40,7 +40,7 @@ def saida_3():
     
 def saida_4():
     andar_reto(2,400)
-    left_motor.run_angle(1000,340)
+    left_motor.run_angle(1000,347)
     andar_reto(48,400)
     right_motor.run_angle(1000,300)
     turn(50,400)
@@ -55,11 +55,13 @@ def saida_6():
     a_motor.run_time(-180,800)
     turn(-2,200)
     andar_reto_suave(29,300)
-    a_motor.run_time(-500,900)
-    andar_reto_suave(-8,400)
-    andar_reto(4,500)
-    a_motor.run_time(680,700)
-    andar_reto(-40,900)
+    turn(10, 100)
+    b_motor.run_target(100,-24)
+    andar_reto(-16,400)
+    andar_reto(6,450)
+    b_motor.run_target(700,53)
+    andar_reto(-32, 900)
+
 
 
 def saida_7():
@@ -69,33 +71,31 @@ def saida_7():
     left_motor.run_angle(170,170)
     andar_reto_suave(12,450)
     a_motor.run_time(1000,1000)
-    andar_reto_suave(-16,400)
-    right_motor.run_angle(-165,165)
-    andar_reto_suave(-35.5,450)
-    b_motor.run_target(1000,-38)
-    right_motor.run_angle(200,182)
-    andar_reto(13, 40)
-    b_motor.run_target(2000,10)
-    andar_reto_suave(5,40)
-    andar_reto(-6.5,450)
-    left_motor.run_angle(600,-550)
-    andar_reto(-10,450)
-    turn(36,450)
-    curva(-400,-400)
+    andar_reto_suave(-17,400)
+    right_motor.run_angle(600,-180)
+    andar_reto(-35, 450)
+    right_motor.run_angle(600,200)
+    b_motor.run_target(600,-37)
+    andar_reto(13,45)
+    b_motor.run_target(2000,20)
+    andar_reto(2,45)
+    andar_reto(-9,450)
+    turn(50, 300)
+    andar_reto(20,600)
+    turn(68,900)
+    andar_reto(68,900)
     
-    
-
-    
-   
-
 def saida_8():
-    b_motor.run_target(450,0)
-    '''andar_reto(70,700)
-    turn(90,450)
-    andar_reto(30,450)
-    b_motor.run_target(450,60,wait=False)
-    a_motor.run_target(450,-60,wait=False)
-    turn(-90,450)'''
+    b_motor.run_target(2000,-29,wait=False)
+    andar_reto_suave(46, 250)
+    turn(-15,30)
+    b_motor.run_target(50, 0)
+    andar_reto(-28,200)
+    turn(10,100)
+
+    
+
+    
 
 saidas = [saida_1,saida_2,saida_3,saida_4,saida_5,saida_6,saida_7,saida_8]
 proxima_saida = 1
