@@ -21,11 +21,11 @@ def saida_3():
     a_motor.run_time(-800,800,wait=False)
     andar_reto(70,400)
     left_motor.run_angle(400,48)
-    andar_reto(10, 300)
-    turn(-15, 450)
+    andar_reto(10,300)
+    turn(-15,450)
     andar_reto_suave(-7,450)
     b_motor.run_target(500,-10)
-    andar_reto(14, 450)
+    andar_reto(14,450)
     andar_reto(-19,400)
     a_motor.run_time(730,730,wait=False)
     right_motor.run_angle(137,137)
@@ -36,35 +36,27 @@ def saida_3():
     andar_reto(-50,400)
     turn(-99,400,liberar=True)
     liberar_motores()
-    
-    
 def saida_4():
-    b_motor.run_target(500, 57, wait=False)
+    b_motor.run_target(500,57,wait=False)
     andar_reto(2,400)
     left_motor.run_angle(1000,347)
     andar_reto(48,400)
     right_motor.run_angle(1000,300)
     turn(50,400)
     andar_reto(-67,400)
-
 def saida_5():
     andar_reto(30,900)
-    
-
 def saida_6():
     drive_base.use_gyro(True)
     a_motor.run_time(-180,800)
     turn(-2,200)
     andar_reto_suave(29,300)
-    turn(10, 100)
+    turn(10,100)
     b_motor.run_target(100,-24)
     andar_reto(-16,400)
     andar_reto(6,450)
     b_motor.run_target(700,53)
-    andar_reto(-30, 900)
-
-
-
+    andar_reto(-30,900)
 def saida_7():
     drive_base.use_gyro(True)
     b_motor.run_target(500,50,wait=False)
@@ -74,48 +66,62 @@ def saida_7():
     a_motor.run_time(1000,1000)
     andar_reto_suave(-17,400)
     right_motor.run_angle(600,-180)
-    andar_reto(-35, 450)
+    andar_reto(-35,450)
     right_motor.run_angle(600,200)
     b_motor.run_target(600,-37)
-    andar_reto(11.5,56)
+    andar_reto(165,56)
     b_motor.run_target(2000,20)
     andar_reto(3,56)
     andar_reto(-11,450)
-    turn(50, 300)
+    turn(50,300)
     andar_reto(23,600)
     turn(66,900)
     andar_reto(68,900)
-    
 def saida_8():
     b_motor.run_target(2000,-29,wait=False)
-    andar_reto_suave(46, 250)
+    andar_reto_suave(46,250)
     turn(-15,40)
-    b_motor.run_target(50, 0)
+    b_motor.run_target(50,0)
     andar_reto_suave(-21,200)
-    b_motor.run_target(40, -24)
-    turn(13, 600)
-    b_motor.run_target(40, -48)
-    andar_reto(-20, 900)
+    b_motor.run_target(40,-24)
+    turn(13,600)
+    b_motor.run_target(40,-48)
+    andar_reto(-20,900)
+def saida_9():
+    b_motor.run_target(400,4,wait=False)
+    andar_reto(62,450)
+    turn(89,80)
+    andar_reto(18,450)
+    turn(-90, 200)
+    andar_reto(15,230)
+    andar_reto_suave(20,140)
+    andar_reto(3,100)
+    b_motor.run_target(200,33)
+    andar_reto(-14,230)
+    turn(-90, 500)
+    andar_reto(15,600)
+    turn(-83,600)
+    andar_reto(60,900)
 
-   
-
-    
-
-    
-
-saidas = [saida_1,saida_2,saida_3,saida_4,saida_5,saida_6,saida_7,saida_8]
+    pass
+def saida_10():
+    pass
+def saida_11():
+    pass
+saidas = [saida_1,saida_2,saida_3,saida_4,saida_5,saida_6,saida_7,saida_8,saida_9,saida_10,saida_11]
+simbolos = ["1","2","3","4","5","6","7","8","9","A","B"]
 proxima_saida = 1
 print("PID reta:",drive_base.distance_control.pid())
 print("PID curva:",drive_base.heading_control.pid())
 while True:
     liberar_motores()
-    opcoes = [str(i) for i in range(proxima_saida,9)]+[str(i) for i in range(1,proxima_saida)]
+    opcoes = simbolos[proxima_saida-1:]+simbolos[:proxima_saida-1]
     selected = hub_menu(*opcoes)
+    numero_saida = simbolos.index(selected)+1
     drive_base.use_gyro(True)
     drive_base.reset()
     configurar_base()
     timer.reset()
-    numero_saida = int(selected)
     print("Iniciando saida:",numero_saida)
     saidas[numero_saida-1]()
     wait(150)
@@ -124,6 +130,5 @@ while True:
     print("Distancia(mm):",drive_base.distance())
     print("Angulo(graus):",drive_base.angle())
     liberar_motores()
-    proxima_saida = numero_saida%8+1
+    proxima_saida = numero_saida%11+1
     wait(500)
-
