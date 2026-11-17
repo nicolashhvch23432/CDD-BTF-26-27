@@ -74,9 +74,7 @@ def saida_7():
     andar_reto(3,56)
     andar_reto(-11,450)
     turn(50,300)
-    andar_reto(23,600)
-    turn(66,900)
-    andar_reto(68,900)
+    a_motor.run_time(1000,-800)
 def saida_8():
     b_motor.run_target(2000,-29,wait=False)
     andar_reto_suave(46,250)
@@ -88,20 +86,6 @@ def saida_8():
     b_motor.run_target(40,-48)
     andar_reto(-20,900)
 def saida_9():
-    b_motor.run_target(400,4,wait=False)
-    andar_reto(62,450)
-    turn(89,80)
-    andar_reto(18,450)
-    turn(-90, 200)
-    andar_reto(15,230)
-    andar_reto_suave(20,140)
-    andar_reto(3,100)
-    b_motor.run_target(200,33)
-    andar_reto(-14,230)
-    turn(-90, 500)
-    andar_reto(15,600)
-    turn(-83,600)
-    andar_reto(60,900)
 
     pass
 def saida_10():
